@@ -14,13 +14,13 @@ const Performance = () => {
 
         //Text animation
         gsap.fromTo(
-            ".content p",
+            sectionPerf.querySelector(".content p"),
             { opacity: 0, y: 10 }, {
             opacity: 1,
             y: 0,
             ease: 'power2.out',
             scrollTrigger: {
-                trigger: '.content p',
+                trigger: sectionPerf.querySelector(".content p"),
                 start: 'top bottom',
                 end: 'top center',
                 scrub: true,
@@ -35,7 +35,7 @@ const Performance = () => {
             scrollTrigger: {
                 trigger: sectionPerf,
                 start: 'top bottom',
-                end: 'center center',
+                end: 'bottom top',
                 scrub: 1,
                 invalidateOnRefresh: true
             }
@@ -51,7 +51,7 @@ const Performance = () => {
             if (typeof item.right === "number") toVars.right = `${item.right}%`;
             if (typeof item.bottom === "number") toVars.bottom = `${item.bottom}%`;
 
-            if (item.transfrom) toVars.transfrom = item.transfrom;
+            if (item.transform) toVars.transform = item.transform;
 
             tl.to(selector, toVars, 0);
         });
@@ -63,15 +63,15 @@ const Performance = () => {
                 Next-level gaming performance. Game on.
             </h2>
             <div className="wrapper">
-                {performanceImages.map(( item, index ) => (
+                {performanceImages.map((item, index) => (
                     <img
-                    key={index}
-                    className={item.id}
-                    src={item.src}
-                    alt={`Performance Image-${index + 1}`} />
+                        key={index}
+                        className={item.id}
+                        src={item.src}
+                        alt={`Performance Image-${index + 1}`} />
                 ))}
             </div>
-            <div className="content lg:-mt-10 pt-0">
+            <div className="content">
                 <p>
                     Run graphics-intensive workflows with a responsiveness that keeps up
                     with your imagination. The M4 family of chips features a GPU with a
