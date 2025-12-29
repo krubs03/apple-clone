@@ -11,7 +11,7 @@ const Showcase = () => {
         scrollTrigger: {
           trigger: '#showcase',
           start: 'top top',
-          bottom: 'bottom top',
+          bottom: 'bottom center',
           scrub: true,
           pin: true
         }
@@ -19,7 +19,7 @@ const Showcase = () => {
 
       timeline
         .to('.mask img', {
-          transform: 'scale(1.1)'
+          transform: 'scale(1.13)'
         })
         .to('.content', {
           opacity: 1, y: 0, ease: 'power1.in'
